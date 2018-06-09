@@ -10,3 +10,20 @@ This demo shows the basic security steps you can take after an Openshift install
 - Create a custom role that has the appropriate rights for the resourcegroup, but al least remove the possibility to create a public ip address
 - Remove the role of the Service Prinicpal that was used for the openshift installation and apply the custom role to this service prinicipal
 - Create new User with default Authentication ; Add User to openshift group and assign policy to group on a project/namespace basis
+
+
+# Installation, openshift origin
+
+Installation is based on the instructions from: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/openshift-origin
+Before following the instructions, do this 1st:
+- create SP and give the proper rights
+  - az ad sp create-for-rbac -n [ NAME OF SP ] --password [ SP PASSWORD ] --role contributor --scopes /subscriptions/[ YOUR SUBSCRIPTION ID ] (do a "az account show" for this info)
+- create resourcegroups for openshift and keyvault
+  - az group create -n [ NAME OF RG FOR OSO ] -l [ REGION ]
+  - az group create -n [ NAME OF RG FOR KV ] -l [ REGION ]
+- create keyvault
+  - az keyvault create -n [ NAME OF KEYVAULT ] -g [ NAME OF RG FOR KV ] -l [ REGION ] --enabled-for-template-deployment true
+- set private ssh key in keyvault you just created
+  - az keyvault secret set --vault-name [ KEYVAULT NAME ] -n keysecret --file ~/.ssh/id_rsa
+
+
