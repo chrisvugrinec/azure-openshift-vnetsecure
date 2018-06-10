@@ -27,3 +27,15 @@ Before following the instructions, do this 1st:
   - az keyvault secret set --vault-name [ KEYVAULT NAME ] -n keysecret --file ~/.ssh/id_rsa
 
 
+
+# Create user and put in developer group
+
+- oc create user chris --full-name="Chris Vugrinec"a
+- ssh on each masternode and add user chris to htpasswd
+- for eg, if you have 3 masters
+- ssh clusteradmin@masterdns75l3yb5ke.westeurope.cloudapp.azure.com -p 2200
+- ssh clusteradmin@masterdns75l3yb5ke.westeurope.cloudapp.azure.com -p 2201
+- ssh clusteradmin@masterdns75l3yb5ke.westeurope.cloudapp.azure.com -p 2202
+- sudo htpasswd /etc/origin/master/htpasswd chris
+- oc adm policy add-cluster-role-to-user developer chris
+- oc adm policy add-role-to-group developer testproject
