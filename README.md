@@ -37,5 +37,9 @@ Before following the instructions, do this 1st:
 - ssh clusteradmin@masterdns75l3yb5ke.westeurope.cloudapp.azure.com -p 2201
 - ssh clusteradmin@masterdns75l3yb5ke.westeurope.cloudapp.azure.com -p 2202
 - sudo htpasswd /etc/origin/master/htpasswd chris
+- Make sure users cannot create new projects/ namespaces anymore
+  - oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated system:authenticated:oauth
+- Make sure that user chris can only access testproject as developer
 - oc adm policy add-cluster-role-to-user developer chris
 - oc adm policy add-role-to-group developer testproject
+- oc adm policy add-role-to-user chris testproject
