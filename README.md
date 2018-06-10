@@ -40,6 +40,7 @@ Before following the instructions, do this 1st:
 - Make sure users cannot create new projects/ namespaces anymore
   - oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated system:authenticated:oauth
 - Make sure that user chris can only access testproject as developer
-- oc adm policy add-cluster-role-to-user developer chris
-- oc adm policy add-role-to-group developer testproject
-- oc adm policy add-role-to-user chris testproject
+  - oc adm groups new developers
+  - oc adm groups add-users developers chris
+  - oc adm policy add-role-to-group admin developer -n testproject
+  - oc adm policy add-role-to-user admin chris -n testproject
