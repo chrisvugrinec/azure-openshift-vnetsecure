@@ -30,6 +30,8 @@ Before following the instructions, do this 1st:
 
 # Create user and put in developer group
 
+- To be done by CLUSTERADMIN: oc adm policy add-role-to-user admin system:serviceaccount:testproject:tiller
+
 - oc create user chris --full-name="Chris Vugrinec"a
 - ssh on each masternode and add user chris to htpasswd
 - for eg, if you have 3 masters
@@ -44,3 +46,7 @@ Before following the instructions, do this 1st:
   - oc adm groups add-users developers chris
   - oc adm policy add-role-to-group admin developer -n testproject
   - oc adm policy add-role-to-user admin chris -n testproject
+
+
+
+
