@@ -1,0 +1,57 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "masterVmSize": {
+            "value": "Standard_E2s_v3"
+        },
+        "infraVmSize": {
+            "value": "Standard_E2s_v3"
+        },
+        "nodeVmSize": {
+            "value": "Standard_E2s_v3"
+        },
+        "openshiftClusterPrefix": {
+            "value": "cvuggieopenshiftdemo"
+        },
+        "masterInstanceCount": {
+            "value": 1
+        },
+        "infraInstanceCount": {
+            "value": 1
+        },
+        "nodeInstanceCount": {
+            "value": 2
+        },
+        "dataDiskSize": {
+            "value": 128
+        },
+        "adminUsername": {
+            "value": "clusteradmin"
+        },
+        "openshiftPassword": {
+            "value": "HelloWorld123!"
+        },
+        "sshPublicKey": {
+            "value": ""
+        },
+        "keyVaultResourceGroup": {
+            "value": "cvuggieopenshiftdemo-kv"
+        },
+        "keyVaultName": {
+            "value": "cvuggieopenshiftdemo-kv"
+        },
+        "keyVaultSecret": {
+            "value": "keysecret"
+        },
+        "aadClientId": {
+            "value": ""
+        },
+        "aadClientSecret": {
+            "value": ""
+        },
+        "defaultSubDomainType": {
+            "value": "nipio"
+        }
+    }
+}

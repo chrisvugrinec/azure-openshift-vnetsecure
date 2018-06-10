@@ -1,0 +1,8 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: redis-local
+  namespace: testproject
+spec:
+  type: ExternalName
+  externalName: 10.1.0.8
