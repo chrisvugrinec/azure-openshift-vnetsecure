@@ -47,6 +47,10 @@ Before following the instructions, do this 1st:
   - oc adm policy add-role-to-group admin developer -n testproject
   - oc adm policy add-role-to-user admin chris -n testproject
 
+# Another ISSUE
 
+You cannot run images from dockerhub that run as root...on openshift...
+in order to enable this:
+oc adm policy add-scc-to-group anyuid system:authenticated
 
 
