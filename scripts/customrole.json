@@ -1,0 +1,17 @@
+  {
+    "Name":  "demopolicy1 - no public address",
+    "IsCustom":  true,
+    "Description":  "You can do everything on the resourcegroup (contributor) except create public IP and external loadbalancer",
+    "Actions": 
+                [
+                    "*"
+                ],
+    "NotActions":  
+                [
+                    "Microsoft.Network/publicIPAddresses/*"
+                ],
+    "AssignableScopes": 
+                [
+                     "/subscriptions/56e05a15-abff-44df-9297-b6b6c5fcaa8e/resourceGroups/cvuggieopenshiftdemo"
+                ]
+   }

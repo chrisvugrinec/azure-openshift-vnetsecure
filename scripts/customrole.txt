@@ -1,0 +1,16 @@
+Built in RBAC roles: https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+Customer roles: https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles
+
+
+HowTO:
+
+# Create new Customer role definitions
+# az role definition create --role-definition [ name of your file ].json
+
+# Remove policy from current service principal
+# az role assignment delete --assignee http://[ YOUR SERVICE PRINCIPAL ID ] --role [ ID OF YOUR ROLE ] --scope /subscriptions/[ YOUR SUBSCRIPTION ID ]/resourceGroups/[ YOUR RG ]
+
+# Add new Custom policy to Service Principal
+# az role assignment create --assignee http://[ YOUR SERVICE PRINCIPAL ID ] --role [ ID OF YOUR ROLE ] --scope /subscriptions/[ YOUR SUBSCRIPTION ID ]/resourceGroups/[ YOUR RG ]
+
+

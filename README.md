@@ -16,11 +16,11 @@ This demo shows the basic security steps you can take after an Openshift install
 
 Installation is based on the instructions from: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/openshift-origin
 Before following the instructions, do this 1st:
-- create SP and give the proper rights
-  - az ad sp create-for-rbac -n [ NAME OF SP ] --password [ SP PASSWORD ] --role contributor --scopes /subscriptions/[ YOUR SUBSCRIPTION ID ] (do a "az account show" for this info)
 - create resourcegroups for openshift and keyvault
   - az group create -n [ NAME OF RG FOR OSO ] -l [ REGION ]
   - az group create -n [ NAME OF RG FOR KV ] -l [ REGION ]
+- create SP and give the proper rights
+  - az ad sp create-for-rbac -n [ NAME OF SP ] --password [ SP PASSWORD ] --role contributor --scopes /subscriptions/[ YOUR SUBSCRIPTION ID ]/resourceGroups/[ NAME OF YOUR RESROUCEGROUP ] (do a "az account show" for the subscription id info)
 - create keyvault
   - az keyvault create -n [ NAME OF KEYVAULT ] -g [ NAME OF RG FOR KV ] -l [ REGION ] --enabled-for-template-deployment true
 - set private ssh key in keyvault you just created
