@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: mario-web
+  namespace: testproject
+spec:
+  rules:
+    - host: mario.demo.datalinks.nl
+      http:
+        paths:
+          - backend:
+              serviceName: docker-supermario
+              servicePort: 8080
+            path: /

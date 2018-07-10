@@ -1,0 +1,3 @@
+
+# Scale down the router
+oc scale dc router --replicas=0

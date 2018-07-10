@@ -12,7 +12,7 @@
             "value": "Standard_E2s_v3"
         },
         "openshiftClusterPrefix": {
-            "value": "cvuggieopenshiftdemo"
+            "value": "oshiftdemo-cluster"
         },
         "masterInstanceCount": {
             "value": 1
@@ -33,22 +33,22 @@
             "value": "HelloWorld123!"
         },
         "sshPublicKey": {
-            "value": ""
+            "value": "ssh-rsa AAAAB3XXXSECRETXXXX"
         },
         "keyVaultResourceGroup": {
-            "value": "cvuggieopenshiftdemo-kv"
+            "value": "vuggieopenshiftdemo"
         },
         "keyVaultName": {
-            "value": "cvuggieopenshiftdemo-kv"
+            "value": "vuggieopenshiftdemo-kv"
         },
         "keyVaultSecret": {
-            "value": "keysecret"
+            "value": "secretkey"
         },
         "aadClientId": {
-            "value": ""
+            "value": "e7fb0acb-255d-4a72-8186-XXXSECRET"
         },
         "aadClientSecret": {
-            "value": ""
+            "value": "HelloWorld123!"
         },
         "defaultSubDomainType": {
             "value": "nipio"
